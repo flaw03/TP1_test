@@ -1,9 +1,10 @@
-package src;
+package algo;
 
 import java.util.Scanner;
 
 public class Anagramme {
-    public String[] makeAnagramme(String mot) {
+
+    public String makeAnagramme(String mot) {
         int taille_anagramme = 0;
         String[] anagramme = mot.split("");
         taille_anagramme = anagramme.length;
@@ -16,10 +17,8 @@ public class Anagramme {
             }
             anagramme[j] = car;
         }
-        return anagramme;
+        return String.join("", anagramme);
     }
-    
-    
 
 
 
