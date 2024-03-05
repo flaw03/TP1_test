@@ -1,3 +1,5 @@
+package test;
+
 import src.Anagramme;
 
 public class TestGlobal {
