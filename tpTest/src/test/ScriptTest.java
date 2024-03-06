@@ -21,7 +21,7 @@ public class ScriptTest {
     @BeforeAll
     static void setUp() throws IOException {
         testData = new ArrayList<>();
-        BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\isaac\\OneDrive\\Bureau\\L3\\ILU4/TP1_test/donnees.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("../donnees.txt"));
         String line;
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(":");
