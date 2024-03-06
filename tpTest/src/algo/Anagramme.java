@@ -19,6 +19,17 @@ public class Anagramme {
         }
         return String.join("", anagramme);
     }
+    
+    public static void main(String[] args) {
+    	Anagramme an = new Anagramme();
+    	String name = "facile";
+    	
+    	System.out.println(an.makeAnagramme(name));
+    	System.out.println("acefil");
+    	System.out.println(an.makeAnagramme("mouton"));
+    	
+    	System.out.println(an.makeAnagramme("personal computer"));
+    }
 
 
 
