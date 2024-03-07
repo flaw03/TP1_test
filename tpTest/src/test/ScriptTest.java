@@ -41,7 +41,7 @@ public class ScriptTest {
             
             String result = an.makeAnagramme(mot);
             
-            assertEquals(anMot, result, "Test failed for input: " + mot);
+            assertEquals(anMot, result, "Test raté pour : " + mot);
         }
         
     }
