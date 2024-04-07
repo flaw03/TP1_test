@@ -15,12 +15,7 @@ public class Specification {
         return true;
     }
     
-    public static void main(String[] args) {
-    	Specification sp = new Specification();
-    	String chaine = "zabcdef";
-    	
-    	System.out.println(sp.isSorted(chaine));
-    }
+  
    
 
 

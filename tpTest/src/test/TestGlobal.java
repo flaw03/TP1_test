@@ -11,66 +11,43 @@ import java.util.*;
 import org.junit.jupiter.api.Test;
 
 public class TestGlobal {
-	static Anagramme an = new Anagramme();
-	static Specification sp = new Specification();
+	private static Anagramme an = new Anagramme();
+	private static Specification specif = new Specification();
+	private static ScriptTest scriptTest = new ScriptTest();
 
-
-    public static void affichageTableau(String[] tab) {
-        for(String x:tab) {
-            System.out.print(x+"");
-        }
-    }
     
     
-    @Test
-    void testSpecification() {
-    	String chaine = "abcdefg";
-    	assertTrue(sp.isSorted(chaine));
-    }
-    
-    @Test
-    void testSpecification2() {
-    	String chaine = "zerioazour";
-    	assertFalse(sp.isSorted(chaine));
-    }
-    
-    @Test
-    void testSpecification3() {
-    	String chaine = "zerioazour";
-    	String chaineSorted = an.makeAnagramme(chaine);
-    	assertTrue(sp.isSorted(chaineSorted));
-    }
-    
-    @Test
-    void testAnagramme() {
-    	assertTrue(an.makeAnagramme("facile").equals("acefil"));
-    }
-    
-    @Test
-    void testAnagramme2() {
-    	assertTrue(an.makeAnagramme("mouton").equals("mnootu"));
-    }
-    
-    @Test
-    void testAnagramme3() {
-    	assertTrue(an.makeAnagramme("zzzzzzzzzzza").equals("azzzzzzzzzzz"));
-    }
-    
-    @Test
-    void testAnagramme4() {
-    	assertTrue(an.makeAnagramme("aaaaaaab").equals("aaaaaaab"));
-    }
-    
-    @Test
-    void testAnagramme5() {
-    	assertTrue(an.makeAnagramme("bonjour").equals("bjnooru"));
-    }
-    
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
     	ScriptTest sp = new ScriptTest();
-    	
-    	sp.setUp();
-    	sp.startTest();
+    	String path = "../bin/donnees.txt";
+    	List<String[]> list = sp.dataToList(path);
+    	System.out.println("**********************************");
+    	sp.testAnagrams(list,path);
+    	System.out.println("**********************************\n");
+    	System.out.println("*********(<) devient (<=)*********");
+    	try{
+    		sp.testAnagramsMT1(list, path);
+    	}catch (IndexOutOfBoundsException e) {
+			System.err.println("Erreur, OUT OF BOUNDS\n");
+		}
+    	System.out.println("**********************************\n");
+    	System.out.println("*********(<) devient (>)*********");
+    	sp.testAnagramsMT2(list, path);
+    	System.out.println("**********************************\n");
+    	System.out.println("*********(>) devient (<=)*********");
+    	try{
+    		sp.testAnagramsMT3(list, path);
+    	}catch (IndexOutOfBoundsException e) {
+			System.err.println("Erreur, OUT OF BOUNDS\n");
+		}
+    	System.out.println("**********************************\n");
+    	System.out.println("*********(-) devient (+)*********");
+    	try{
+    		sp.testAnagramsMT4(list, path);
+    	}catch (IndexOutOfBoundsException e) {
+			System.err.println("Erreur, OUT OF BOUNDS\n");
+		}
+    	System.out.println("**********************************");
     	
     	
     	
