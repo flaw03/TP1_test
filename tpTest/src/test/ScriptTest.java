@@ -1,6 +1,7 @@
 package test;
 
 import algo.Anagramme;
+import specif.Specification;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -17,6 +18,7 @@ import org.junit.jupiter.api.Test;
 public class ScriptTest {
     static List<String[]> testData;
     static Anagramme an = new Anagramme();
+    static Specification sp = new Specification();
     
     public List<String[]> dataToList(String path) {
     	List<String[]> list = new ArrayList<>();
@@ -47,7 +49,7 @@ public class ScriptTest {
                     
                     System.out.println("Entree : "+mot+"| |Attendu : "+anMot+"\n     - Sortie : "+result);
                     
-                    if(anMot.equals(result)) {
+                    if(anMot.equals(result)&&sp.isSorted(result)) {
                     	
                     	System.out.println("Test reussi pour : "+mot+"\n");
                     }
@@ -71,7 +73,7 @@ public class ScriptTest {
                     
                     System.out.println("Entree : "+mot+"| |Attendu : "+anMot+"\n     - Sortie : "+result);
                     
-                    if(anMot.equals(result)) {
+                    if(anMot.equals(result)&&sp.isSorted(result)) {
                     	
                     	System.out.println("Test reussi pour : "+mot+"\n");
                     }
@@ -95,7 +97,7 @@ public class ScriptTest {
                     
                     System.out.println("Entree : "+mot+"| |Attendu : "+anMot+"\n     - Sortie : "+result);
                     
-                    if(anMot.equals(result)) {
+                    if(anMot.equals(result)&&sp.isSorted(result)) {
                     	
                     	System.out.println("Test reussi pour : "+mot+"\n");
                     }
@@ -119,7 +121,7 @@ public class ScriptTest {
                     
                     System.out.println("Entree : "+mot+"| |Attendu : "+anMot+"\n     - Sortie : "+result);
                     
-                    if(anMot.equals(result)) {
+                    if(anMot.equals(result)&&sp.isSorted(result)) {
                     	
                     	System.out.println("Test reussi pour : "+mot+"\n");
                     }
@@ -143,7 +145,7 @@ public class ScriptTest {
                     
                     System.out.println("Entree : "+mot+"| |Attendu : "+anMot+"\n     - Sortie : "+result);
                     
-                    if(anMot.equals(result)) {
+                    if(anMot.equals(result)&&sp.isSorted(result)) {
                     	
                     	System.out.println("Test reussi pour : "+mot+"\n");
                     }
