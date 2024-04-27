@@ -20,37 +20,33 @@ public class TestGlobal {
     public static void main(String[] args){
     	
     	String path = args[0];
+    	if(!path.contains(".txt")) {
+    		System.err.println("Usage [" +path+ "] <dataFile.txt>");
+    		System.exit(1);
+    	}
+
     	List<String[]> list = sp.dataToList(path);
     	System.out.println("**********************************");
-    	try {
+    	
     	sp.testAnagrams(list,path,an::makeAnagramme);
-    	}catch(OutOfMemoryError e) {
-    		System.err.println("Erreur, Out of memory, la pile est pleine\n");
-    	}
+    	
     	System.out.println("**********************************\n");
     	System.out.println("*********(<) devient (<=)*********");
-    	try{
-    		sp.testAnagrams(list, path,an::makeAnagrammeMT1);
-    	}catch (IndexOutOfBoundsException e) {
-			System.err.println("Erreur, OUT OF BOUNDS\n");
-		}
+    	sp.testAnagrams(list, path,an::makeAnagrammeMT1);
+    	
     	System.out.println("**********************************\n");
     	System.out.println("*********(<) devient (>)*********");
     	sp.testAnagrams(list, path,an::makeAnagrammeMT2);
     	System.out.println("**********************************\n");
     	System.out.println("*********(>) devient (<=)*********");
-    	try{
+    	
     		sp.testAnagrams(list, path,an::makeAnagrammeMT3);
-    	}catch (IndexOutOfBoundsException e) {
-			System.err.println("Erreur, OUT OF BOUNDS\n");
-		}
+    	
     	System.out.println("**********************************\n");
     	System.out.println("*********(-) devient (+)*********");
-    	try{
+    	
     		sp.testAnagrams(list, path,an::makeAnagrammeMT4);
-    	}catch (IndexOutOfBoundsException e) {
-			System.err.println("Erreur, OUT OF BOUNDS\n");
-		}
+    	
     	System.out.println("**********************************");
     	
     	

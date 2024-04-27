@@ -49,26 +49,24 @@ public class ScriptTest {
                     String mot = donnees[0];
                     String anMot = donnees[1];
                     
-                    String result = fun.apply(mot);
-                    if(mot.equals(" ") || anMot.equals(" ")) {
-                    	
+                    try {
+                    	String result = fun.apply(mot);
+                   
+                    if(mot.equals(" ") || anMot.equals(" ")) { 	
                     	System.err.println("Donnee non conforme, présence d'un mot vide à la ligne : "+nbLigne);
                     	System.out.println("________________________________________________________________");
                     	continue;}
                     
                     System.out.println("Entree : "+mot+"| |Attendu : "+anMot+"\n     - Sortie : "+result);
-                    
-                    
-                    
-                    
-                    
                     if(anMot.equals(result)&&sp.isSorted(result)) 	
                     	System.out.println("Test reussi pour : "+mot);
                     else 
                     	System.err.println("Test rate pour : "+mot);
                     
                     System.out.println("________________________________________________________________");
-                    
+                    }catch(Exception e) {
+                    	System.err.println("Test rate pour : "+mot);
+                    }
                     
                    
                 }

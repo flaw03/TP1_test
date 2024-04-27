@@ -21,4 +21,5 @@ a:a
 1:1
 -:-
 cba321:123abc
+12.5:.125
 bonjourmoichainede100motsbonjourmoichainede100motsbonjourmoichainede100motsbonjourmoichainede100mots:000000001111aaaabbbbccccddddeeeeeeeehhhhiiiiiiiijjjjmmmmmmmmnnnnnnnnoooooooooooooooorrrrssssttttuuuu
