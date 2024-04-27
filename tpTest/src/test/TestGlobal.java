@@ -26,28 +26,33 @@ public class TestGlobal {
     	}
 
     	List<String[]> list = sp.dataToList(path);
-    	System.out.println("**********************************");
+    	System.out.println("***************************************************************************");
+    	System.out.println("***************************************************************************");
     	
     	sp.testAnagrams(list,path,an::makeAnagramme);
     	
-    	System.out.println("**********************************\n");
-    	System.out.println("*********(<) devient (<=)*********");
+    	System.out.println("***************************************************************************");
+    	System.out.println("*********************(<) devient (<=) à la ligne 4*************************");
+    	System.out.println("***************************************************************************");
     	sp.testAnagrams(list, path,an::makeAnagrammeMT1);
     	
-    	System.out.println("**********************************\n");
-    	System.out.println("*********(<) devient (>)*********");
+    	System.out.println("***************************************************************************");
+    	System.out.println("*********************(<) devient (>) à la ligne 6**************************");
+    	System.out.println("***************************************************************************");
     	sp.testAnagrams(list, path,an::makeAnagrammeMT2);
-    	System.out.println("**********************************\n");
-    	System.out.println("*********(>) devient (<=)*********");
+    	System.out.println("***************************************************************************");
+    	System.out.println("*********************(>) devient (<=) à la ligne 9*************************");
+    	System.out.println("***************************************************************************");
     	
     		sp.testAnagrams(list, path,an::makeAnagrammeMT3);
     	
-    	System.out.println("**********************************\n");
-    	System.out.println("*********(-) devient (+)*********");
+    	System.out.println("***************************************************************************");
+    	System.out.println("************************(-) devient (+) à la ligne 7***********************");
+    	System.out.println("***************************************************************************");
     	
     		sp.testAnagrams(list, path,an::makeAnagrammeMT4);
     	
-    	System.out.println("**********************************");
+    	System.out.println("***************************************************************************");
     	
     	
     	

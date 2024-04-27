@@ -65,6 +65,7 @@ public class ScriptTest {
                     
                     System.out.println("________________________________________________________________");
                     }catch(Exception e) {
+                  
                     	System.err.println("Test rate pour : "+mot);
                     }
                     
