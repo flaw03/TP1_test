@@ -1,3 +1,7 @@
+SMETS Yoann
+NDOYE Assane
+RICHARD Jérémy
+
 Pour lancer le programme : 
 
  - Se déplacer jusqu'au répertoire bin (avec lignes de commandes)
