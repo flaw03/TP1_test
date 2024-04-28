@@ -1,6 +1,13 @@
 package algo;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.Scanner;
+
+import org.junit.jupiter.api.Test;
+
+import specif.Specification;
 
 public class Anagramme {
 
@@ -84,10 +91,6 @@ public class Anagramme {
         return String.join("", anagramme);
     }
     
-    public static void main(String[] args) {
-    	Anagramme an = new Anagramme();
-    	System.out.println(an.makeAnagramme("-&^_"));
-    }
     
     public String makeAnagrammeLIM1(String mot) {
         int taille_anagramme = 0;
@@ -104,6 +107,16 @@ public class Anagramme {
         }
         return String.join("", anagramme);
     }
+    
+    @Test
+	public void testMouton() {
+		Anagramme an = new Anagramme();
+		Specification sp = new Specification();
+		String result = an.makeAnagramme("mouton");
+		assertEquals(result,"mnootu");
+		assertTrue(sp.isSorted(result));
+		
+	}
     
  
 
